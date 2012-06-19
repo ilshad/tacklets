@@ -1,0 +1,37 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tacklets">
+
+  <!-- Add New Issue -->
+  <viewlet
+     for="tacklets.project.interfaces.IProject"
+     name="issue.add"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="tacklets.project.CreateIssue"
+     url="issue/add"
+     title="New issue"
+     weight="10"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.IIssueFolder"
+     name="issue.add"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="tacklets.project.CreateIssue"
+     url="add"
+     title="New issue"
+     weight="10"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.IIssue"
+     name="issue.add"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="tacklets.project.CreateIssue"
+     url="../add"
+     title="New issue"
+     weight="10"
+     />
+
+</configure>

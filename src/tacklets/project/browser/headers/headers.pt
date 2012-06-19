@@ -1,0 +1,2 @@
+<script type="text/javascript"
+	tal:attributes="src string:${context/@@absolute_url}/js_variables.js"></script>

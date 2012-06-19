@@ -1,0 +1,8 @@
+<tal:block condition="view/actions">
+  <fieldset class="distinct" id="workflow_actions">
+    <legend>Actions</legend>
+    <tal:block repeat="x view/actions">
+      <tal:block content="structure x/@@index" />
+    </tal:block>
+  </fieldset>
+</tal:block>

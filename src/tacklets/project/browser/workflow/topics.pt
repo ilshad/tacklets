@@ -1,0 +1,16 @@
+<html>
+  <head></head>
+  <body>
+    <form method="post" tal:attributes="action request/URL">
+      <input type="text" name="topics" style="width:90%"
+	     tal:attributes="value view/titles" />
+      <ul>
+	<li tal:repeat="topic python:context.get_topics()">
+	  <a href="#" tal:content="topic/title" />
+	</li>
+      </ul>
+      <input type="submit" name="submit" value="Save" />
+      <input type="button" id="form-buttons-cancel" value="Cancel" />
+    </form>
+  </body>
+</html>

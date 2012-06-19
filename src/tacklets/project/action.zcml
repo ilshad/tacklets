@@ -1,0 +1,24 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tacklets">
+
+  <adapter
+     factory=".action.TransitionAction"
+     trusted="True"
+     />
+
+  <adapter
+     name="edit"
+     for=".interfaces.IDocument"
+     provides=".interfaces.IAction"
+     factory=".action.edit_action"
+     />
+
+  <adapter
+     name="topics"
+     for=".interfaces.IDocument"
+     provides=".interfaces.IAction"
+     factory=".action.topics_action"
+     />
+
+</configure>

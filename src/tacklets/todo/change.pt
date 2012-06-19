@@ -1,0 +1,20 @@
+<form name="form" method="post" enctype="multipart/form-data"
+      tal:attributes="action request/URL"
+      tal:define="closed view/item/closed">
+  <textarea name="subject" tal:content="view/item/subject" id="subject"></textarea>
+
+  closed: 
+  <tal:block condition="closed">
+    <input type="checkbox" name="closed" checked />
+  </tal:block>
+
+  <tal:block condition="not:closed">
+    <input type="checkbox" name="closed" />
+  </tal:block>
+
+  <input type="hidden" name="item_key" id="item_key"
+	 tal:attributes="value python:request.get('item_key')" />
+  <a tal:attributes="onclick string:todo.on_change(this, '${context/@@absolute_url}')" class="action">Submit</a>
+  <a tal:attributes="onclick string:todo.hide(this)" class="action">Cancel</a>
+  <a tal:attributes="onclick string:todo.remove(this, '${context/@@absolute_url}')" class="action">Delete</a>
+</form>

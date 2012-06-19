@@ -1,0 +1,47 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tacklets">
+
+  <include file="require.zcml" />
+  <include file="security.zcml" />
+  <include file="classes.zcml" />
+  <include file="workflow.zcml" />
+  <include file="responsibility.zcml" />
+  <include file="hooks.zcml" />
+  <include file="action.zcml" />
+
+  <subscriber
+     for="tacklets.project.interfaces.IProject
+	  zope.lifecycleevent.interfaces.IObjectAddedEvent"
+     handler=".project.project_added"
+     />
+
+  <subscriber
+     for="tacklets.project.interfaces.IIssue
+	  zope.lifecycleevent.interfaces.IObjectAddedEvent"
+     handler=".issue.issue_added"
+     />
+
+  <adapter
+     for=".interfaces.IIssueFolder"
+     provides="zope.container.interfaces.INameChooser"
+     factory="tacklets.util.namechooser.IntegerNameChooser"
+     />
+  <adapter
+     for=".interfaces.ITopicFolder"
+     provides="zope.container.interfaces.INameChooser"
+     factory="tacklets.util.namechooser.IntegerNameChooser"
+     />
+
+  <utility
+     provides="zope.schema.interfaces.IVocabularyFactory"
+     component=".vocabulary.project_members"
+     name="Project Members"
+     />
+
+  <adapter factory=".search.DocumentSearchResultItem" />
+  <adapter factory=".search.DocumentSearchableText" />
+
+  <include package=".browser" />
+
+</configure>

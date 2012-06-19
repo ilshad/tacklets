@@ -1,0 +1,15 @@
+<fieldset class="todo">
+  <legend>TODO</legend>
+  <div>
+    <a onclick="todo.show_add(this)" class="action"> &#043; </a>
+  </div>
+  <div style="display:none">
+    <textarea name="subject"></textarea>
+    <a tal:attributes="onclick string:todo.add(this, '${context/@@absolute_url}')" class="action">
+      Submit
+    </a>
+    <a onclick="todo.hide(this)" class="action">Cancel</a>
+  </div>
+  <div></div>
+  <div tal:content="structure view/listing" />
+</fieldset>

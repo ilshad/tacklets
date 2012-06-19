@@ -1,0 +1,37 @@
+/**
+*
+* todo.css is part of Tackle software
+* 2010 Ilshad Khabibullin <astoon@spacta.com>
+*
+**/
+
+fieldset.todo {
+    padding: 5px;
+    margin: 5px;
+    width: 20em;
+    background-color: #fff;
+}
+fieldset.todo textarea {
+    width: 18em;
+}
+fieldset.todo del {
+    opacity: .5;
+}
+fieldset.todo a.action {
+    padding: 1px 20px;
+    border: 1px solid transparent;
+    display: block;
+}
+fieldset.todo a.action:hover {
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+fieldset.todo form {
+    text-align: center;
+}
+fieldset.todo ol li {
+    list-style-type: decimal;
+}
+fieldset.todo ol li span.todo_item:hover {
+    cursor: pointer;
+}

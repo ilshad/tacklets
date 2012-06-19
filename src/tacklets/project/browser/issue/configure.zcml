@@ -1,0 +1,38 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="tacklets">
+
+  <!-- Add Issue -->
+  <pagelet
+     for="tacklets.project.interfaces.IIssueFolder"
+     name="add"
+     class=".add.Pagelet"
+     permission="tacklets.project.CreateIssue"
+     />
+
+  <!-- Display Issue -->
+  <browser:defaultView
+     for="tacklets.project.interfaces.IIssue"
+     name="display"
+     />
+  <pagelet
+     for="tacklets.project.interfaces.IIssue"
+     name="display"
+     class=".display.Pagelet"
+     permission="zope.View"
+     />
+  <template
+     for=".display.Pagelet"
+     template="display.pt"
+     />
+
+  <!-- mini-views -->
+  <browser:page
+     for="tacklets.project.interfaces.IIssue"
+     name="properties"
+     class=".properties.IssuePropertiesView"
+     permission="zope.View"
+     />
+
+</configure>

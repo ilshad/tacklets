@@ -1,0 +1,36 @@
+<fieldset>
+  <legend>Properties</legend>
+  <table>
+    <tr>
+      <td class="description">Status</td>
+      <td><a href="" tal:content="view/get_state" /></td>
+
+      <td width="50"></td>
+
+      <td class="description">Deadline</td>
+      <td><a href="">14 июня 2011</a></td>
+    </tr>
+
+    <tr>
+      <td class="description">Responsible</td>
+      <td><a href="" tal:content="view/get_responsible" /></td>
+
+      <td width="50"></td>
+
+      <td class="description">Milestone</td>
+      <td><a href="">Регистрация</a></td>
+    </tr>
+
+    <tr>
+      <td class="description">Topics</td>
+      <td colspan="4">
+	<tal:block repeat="x python:context.get_topics()">
+	  <a tal:attributes="href string:foo">
+	    [<tal:block replace="x/title" />]
+	  </a>
+	  &nbsp;
+	</tal:block>
+      </td>
+    </tr>
+  </table>
+</fieldset>

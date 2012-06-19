@@ -1,0 +1,21 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tacklets">
+
+  <z3c:pagelet
+     for="tacklets.project.interfaces.IProject"
+     name="query"
+     class=".index.IndexQueryPage"
+     permission="zope.View"
+     />
+  <z3c:template
+     for=".index.IndexQueryPage"
+     template="index.pt"
+     />
+  <defaultView
+     for="tacklets.project.interfaces.IProject"
+     name="query"
+     />
+
+</configure>

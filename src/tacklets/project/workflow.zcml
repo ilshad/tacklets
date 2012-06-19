@@ -1,0 +1,31 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tacklets">
+
+  <utility
+     component=".workflow.issue_workflow"
+     provides="hurry.workflow.interfaces.IWorkflow"
+     name="project.issue"
+     />
+
+  <adapter
+     factory=".workflow.IssueWorkflowInfo"
+     for=".interfaces.IIssue"
+     provides="hurry.workflow.interfaces.IWorkflowInfo"
+     name="project.issue"
+     />
+
+  <adapter
+     factory=".workflow.IssueWorkflowState"
+     for="zope.annotation.interfaces.IAnnotatable"
+     provides="hurry.workflow.interfaces.IWorkflowState"
+     name="project.issue"
+     />
+
+  <subscriber
+     for=".interfaces.IIssue
+	  hurry.workflow.interfaces.IWorkflowTransitionEvent"
+     handler=".workflow.issue_transition_handler"
+     />
+
+</configure>

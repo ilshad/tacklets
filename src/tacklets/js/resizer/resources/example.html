@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>jQuery textarea resizer plugin</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="jquery.textarearesizer.compressed.js"></script>
+    <script type="text/javascript">
+      /* jQuery textarea resizer plugin usage */
+      $(document).ready(function() {
+      $('textarea.resizable:not(.processed)').TextAreaResizer();
+      $('iframe.resizable:not(.processed)').TextAreaResizer();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQuery TextAreaResizer plugin example</h1>
+    <h2>Simple iFrame (jQuery) + Resizer bar (grippie)</h2>
+    <iframe class="resizable" src="http://jQuery.com" width="800px" height="200px"></iframe>
+    <br />
+    <h2>Simple textarea + Resizer bar (grippie)</h2>
+    <textarea class="resizable">some test text
+      some test text
+      some test text
+      some test text
+some test text
+      some test text
+    </textarea>   
+    <p><a href="http://plugins.jquery.com/project/TextAreaResizer">Link back to jQuery TextAreaResizer plugin page</a></p>
+  </body>
+</html>

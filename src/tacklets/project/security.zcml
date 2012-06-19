@@ -1,0 +1,69 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tacklets">
+
+  <!-- Permissions -->
+  <permission id="tacklets.project.Action" title="Do something in the project" />
+  <permission id="tacklets.project.Watch" title="Watch workflow state" />
+  <permission id="tacklets.project.CreateIssue" title="Create issues" />
+  <permission id="tacklets.project.CloseIssue" title="Close issue" />
+  <permission id="tacklets.project.Responsibility" title="Set responsibility" />
+  <permission id="tacklets.project.Restore" title="Restore documents" />
+
+  <!-- Roles -->
+  <role id="tacklets.project.Member" title="Project member" />
+  <role id="tacklets.project.Watcher" title="Project watcher" />
+  <role id="tacklets.project.Customer" title="Project customer" />
+  <role id="tacklets.project.Supervisor" title="Project supervisor" />
+  <role id="dynamic_tacklets.project.DocumentResponsible" title="Responsible to document" />
+
+  <!--
+      Grant permissions to roles
+    -->
+
+  <grant role="tacklets.project.Member" permission="tacklets.project.Watch" />
+  <grant role="tacklets.project.Member" permission="tackle.Overview" />
+  <grant role="tacklets.project.Member" permission="zope.View" />
+  <grant role="tacklets.project.Member" permission="zope.dublincore.view" />
+  <grant role="tacklets.project.Member" permission="zope.dublincore.change" />
+  <grant role="tacklets.project.Member" permission="tacklets.todo.View" />
+
+  <grant role="tacklets.project.Watcher" permission="tacklets.project.Watch" />
+  <grant role="tacklets.project.Watcher" permission="tackle.Overview" />
+  <grant role="tacklets.project.Watcher" permission="zope.View" />
+  <grant role="tacklets.project.Watcher" permission="zope.dublincore.view" />
+  <grant role="tacklets.project.Watcher" permission="tacklets.todo.View" />
+
+  <grant role="tacklets.project.Customer" permission="tacklets.project.CreateIssue" />
+  <grant role="tacklets.project.Customer" permission="tackle.Overview" />
+  <grant role="tacklets.project.Customer" permission="zope.View" />
+  <grant role="tacklets.project.Customer" permission="zope.dublincore.view" />
+  <grant role="tacklets.project.Customer" permission="tacklets.todo.View" />
+
+  <grant role="tacklets.project.Supervisor" permission="tacklets.project.Responsibility" />
+  <grant role="tacklets.project.Supervisor" permission="tacklets.project.CreateIssue" />
+  <grant role="tacklets.project.Supervisor" permission="tacklets.project.CloseIssue" />
+  <grant role="tacklets.project.Supervisor" permission="tacklets.project.Restore" />
+  <grant role="tacklets.project.Supervisor" permission="tacklets.project.Action" />
+  <grant role="tacklets.project.Supervisor" permission="tacklets.project.Watch" />
+  <grant role="tacklets.project.Supervisor" permission="tackle.Overview" />
+  <grant role="tacklets.project.Supervisor" permission="zope.dublincore.view" />
+  <grant role="tacklets.project.Supervisor" permission="zope.dublincore.change" />
+  <grant role="tacklets.project.Supervisor" permission="zope.Security" />
+  <grant role="tacklets.project.Supervisor" permission="zope.View" />
+  <grant role="tacklets.project.Supervisor" permission="tacklets.todo.View" />
+  <grant role="tacklets.project.Supervisor" permission="tacklets.todo.Write" />
+
+  <grant role="tackle.SystemManager" permission="tacklets.project.Responsibility" />
+  <grant role="tackle.SystemManager" permission="tacklets.project.CreateIssue" />
+  <grant role="tackle.SystemManager" permission="tacklets.project.CloseIssue" />
+  <grant role="tackle.SystemManager" permission="tacklets.project.Restore" />
+  <grant role="tackle.SystemManager" permission="tacklets.project.Action" />
+  <grant role="tackle.SystemManager" permission="tacklets.project.Watch" />
+  <grant role="tackle.SystemManager" permission="tacklets.todo.View" />
+  <grant role="tackle.SystemManager" permission="tacklets.todo.Write" />
+
+  <grant role="dynamic_tacklets.project.DocumentResponsible" permission="tacklets.project.Action" />
+  <grant role="dynamic_tacklets.project.DocumentResponsible" permission="tacklets.todo.Write" />
+
+</configure>

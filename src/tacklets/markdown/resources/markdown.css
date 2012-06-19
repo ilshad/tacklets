@@ -1,0 +1,20 @@
+div.markdown-formatting-toolbar {
+    display:block;
+    padding: 2px 0;
+}
+
+div.markdown-formatting-toolbar > a {
+    padding: 0 10px 0 10px;
+    border: 1px solid #777;
+    margin: 0 3px 0 3px;
+}
+
+div.markdown-formatting-toolbar > #strong {
+    background: #fff url("images/bt_strong.png") no-repeat top center;
+}
+div.markdown-formatting-toolbar > #em {
+    background: #fff url("images/bt_em.png") no-repeat top center;
+}
+div.markdown-formatting-toolbar > #heading {
+    background: #fff url("images/bt_h1.png") no-repeat top center;
+}

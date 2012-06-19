@@ -1,0 +1,24 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tacklets">
+
+  <interface
+     interface=".interfaces.IColdSkin"
+     type="tacklets.theming.interfaces.ITheme"
+     name="Cold"
+     />
+
+  <z3c:layout 
+     layer=".interfaces.IColdSkin"
+     template="layout.pt"
+     />
+
+  <browser:zrt-resource
+     name="cold.css"
+     file="cold.css"
+     layer=".interfaces.IColdSkin"
+     />
+
+</configure>

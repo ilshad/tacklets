@@ -1,0 +1,136 @@
+/**
+*
+* Tackle software
+* 2010 Ilshad Khabibullin <astoon@spacta.com>
+*
+**/
+
+/* zrt-replace: "../images/" tal"string:${context/@@/tackle_images}/" */
+/* zrt-replace: "base.css" tal"string:${context/@@/base.css}/" */
+
+/* zrt-replace: "main-font-color" "#333333" */
+/* zrt-replace: "main-border-color" "#777777" */
+
+/* zrt-replace: "distinct-background-color" "#79FF6D" */
+/* zrt-replace: "distinct-foreground-color" "#3C3B37" */
+
+/* zrt-replace: "link-color" "#55008A" */
+/* zrt-replace: "link-hover-color" "#FFA800" */
+
+/* zrt-replace: "title-color" "#4E5E86" */
+/* zrt-replace: "subtitle-color" "#8d4b00" */
+
+/* zrt-replace: "x-color" "#3E6257" */
+/* zrt-replace: "y-color" "#3C3B37" */
+
+/* zrt-replace: "header-background-color" "#BD7EFF" */
+
+@import "base.css";
+
+body {
+    background-color: #fff;
+    color: main-font-color;
+}
+table {
+    border-color: main-border-color;
+}
+th {
+    color: main-font-color;
+}
+a {
+    color: link-color;
+}
+a:hover {
+    color: link-hover-color;
+}
+h1 {
+    color: title-color;
+}
+h2 {
+    color: subtitle-color;
+}
+fieldset {
+    border-color: distinct-foreground-color;
+    -webkit-border-radius: 0 10px 0 10px;
+    -moz-border-radius: 0 10px 0 10px;
+}
+legend {
+    color: main-font-color;
+}
+fieldset.distinct {
+    background-color: distinct-background-color;
+    color:main-font-color;
+}
+option {
+    border-bottom-color: #d7d7d7;
+}
+input[type=text], input[type=password], textarea, select {
+    border-color: main-border-color;
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus, select {
+    border-color: link-hover-color;
+}
+.status {
+    color: red;
+}
+.distinct {
+    color: distinct-foreground-color;
+}
+#header {
+    background-color:header-background-color;
+}
+#header h1 a {
+    border-bottom-color: header-background-color;
+    color: #000;
+}
+#header h1 a:hover {
+    border-bottom-color: #000;
+}
+#appmenu a {
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-right: 1px solid link-color;
+    border-bottom: 1px solid link-color;
+}
+#appmenu a:hover {
+    border-left: 1px solid link-color;
+    border-top: 1px solid link-color;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+#personalbar {
+    background-color: y-color;
+}
+#personalbar span {
+    color: #999;
+}
+#personalbar a {
+    color: #fff;
+}
+#personalbar a:hover {
+    color: link-hover-color;
+}
+#settings .queries .query {
+    background-color: distinct-background-color;
+    border-color: distinct-foreground-color;
+    color: distinct-background-color;
+}
+.queries .query h4 {
+    color: main-font-color;
+}
+pre {
+  border-color: main-border-color;
+  background-color: #ccc;
+  color: #000;
+}
+.description {
+    color: green;
+}
+.highlighted {
+    background-color: #FFFCB9;
+}
+.nested_menu {
+    padding: 3px;
+    border: 1px solid #bbb;
+    background-color: #eee;
+}

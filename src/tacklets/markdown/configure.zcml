@@ -1,0 +1,44 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tacklets">
+
+  <include package="tacklets.js.resizer" />
+
+  <utility
+     name="tackle.markdown"
+     component=".renderer.MarkdownSourceFactory"
+     />
+
+  <browser:view
+     name=""
+     for=".renderer.IMarkdownSource"
+     class=".renderer.MarkdownHTMLRenderer"
+     permission="zope.Public"
+     />
+
+  <adapter
+     factory=".input.InputMarkdownFieldWidget"
+     for=".schema.IMarkdownSourceText
+	  z3c.form.interfaces.IFormLayer"
+     provides="z3c.form.interfaces.IFieldWidget"
+     />
+
+  <z3c:widgetTemplate
+     mode="input"
+     template="input.pt"
+     widget=".input.InputMarkdownWidget"
+     field=".schema.IMarkdownSourceText"
+     />
+
+  <resourceLibrary name="tacklets.markdown"
+		   require="resizer">
+    <directory
+       source="resources"
+       include="markdown.js
+		markdown.css"
+       />
+  </resourceLibrary>
+
+</configure>

@@ -1,0 +1,13 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tacklets">
+
+  <resourceLibrary name="datatables">
+    <directory
+       source="resources"
+       include="jquery.dataTables.min.js
+		jquery.dataTablesExt.js"
+       />
+  </resourceLibrary>
+
+</configure>

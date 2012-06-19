@@ -1,0 +1,126 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tacklets">
+
+  <class class=".project.Project">
+    <factory
+       id="tacklets.project"
+       title="Project"
+       />
+    <implements
+       interface="tackle.IContent"
+       />
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface="zope.app.container.interfaces.IReadContainer"
+       permission="zope.View"
+       />
+    <require
+       interface="zope.app.container.interfaces.IWriteContainer"
+       permission="zope.ManageContent"
+       />
+    <require
+       interface=".interfaces.IProject"
+       permission="zope.View"
+       />
+  </class>
+
+  <class class=".issue.Issue">
+    <implements
+       interface="tacklets.todo.interfaces.ITODOAnnotatable"
+       />
+    <require
+       interface=".interfaces.IIssue"
+       permission="zope.View"
+       />
+    <require
+       set_schema=".interfaces.IIssue"
+       permission="tacklets.project.Action"
+       />
+    <require
+       interface="zope.app.container.interfaces.IReadContainer"
+       permission="zope.View"
+       />
+    <require
+       interface="zope.app.container.interfaces.IWriteContainer"
+       permission="tacklets.project.Action"
+       />
+  </class>
+
+  <class class=".project.TopicFolder">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface=".interfaces.ITopicFolder"
+       permission="zope.View"
+       />
+    <require
+       interface="zope.app.container.interfaces.IReadContainer"
+       permission="zope.View"
+       />
+    <require
+       interface="zope.app.container.interfaces.IWriteContainer"
+       permission="tacklets.project.Action"
+       />
+  </class>
+
+  <class class=".project.MilestoneFolder">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface="zope.app.container.interfaces.IReadContainer"
+       permission="zope.View"
+       />
+    <require
+       interface="zope.app.container.interfaces.IWriteContainer"
+       permission="tacklets.project.Action"
+       />
+  </class>
+
+  <class class=".project.IssueFolder">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface="zope.app.container.interfaces.IReadContainer"
+       permission="zope.View"
+       />
+    <require
+       interface="zope.app.container.interfaces.IWriteContainer"
+       permission="zope.Public"
+       />
+  </class>
+
+  <class class=".project.NoteFolder">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface="zope.app.container.interfaces.IReadContainer"
+       permission="zope.View"
+       />
+    <require
+       interface="zope.app.container.interfaces.IWriteContainer"
+       permission="tacklets.project.Action"
+       />
+  </class>
+
+  <class class=".topic.Topic">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface=".interfaces.ITopic"
+       permission="zope.View"
+       />
+    <require
+       set_schema=".interfaces.ITopic"
+       permission="tacklets.project.Action"
+       />
+  </class>
+
+</configure>

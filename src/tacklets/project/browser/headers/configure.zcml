@@ -1,0 +1,76 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tacklets">
+
+  <page
+     name="js_variables.js"
+     class=".js_variables.View"
+     permission="zope.Public"
+     />
+
+  <!-- dispaly this header anywhere in the project -->
+  <viewlet
+     for="tacklets.project.interfaces.IProject"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.IIssueFolder"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.IIssue"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.INoteFolder"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.INote"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.IMilestoneFolder"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.IMilestone"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.ITopicFolder"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+  <viewlet
+     for="tacklets.project.interfaces.ITopic"
+     name="project_headers"
+     manager="tackle.skin.headers.interfaces.IHeaders"
+     template="headers.pt"
+     permission="zope.Public"
+     />
+
+</configure>

@@ -1,0 +1,8 @@
+<script type="text/javascript" tal:attributes="src string:${context/@@absolute_url}/jsvars.js"></script>
+<tal:block replace="resource_library:tacklets.project"/>
+
+<div class="querymenu">
+  <a href="#" class="switch switch_default">foo</a>
+  <a href="#" class="switch">bar</a>
+  <a href="#" class="switch">baaz</a>
+</div>

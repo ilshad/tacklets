@@ -1,0 +1,25 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tacklets">
+
+  <include file="menu.zcml" />
+
+  <include package=".tmp" />
+  <include package=".query" />
+  <include package=".workflow" />
+  <include package=".issue" />
+  <include package=".headers" />
+
+  <resourceLibrary name="tacklets.project" require="tacklets.markdown">
+    <directory source="resources" include="project.js project.css" />
+  </resourceLibrary>
+
+  <!-- Publish documentation -->
+  <browser:resourceDirectory
+     name="tacklets.project.doc"
+     directory="../doc"
+     />
+
+</configure>

@@ -1,0 +1,184 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tacklets">
+
+  <!--
+     Widgets
+     -->
+
+  <page
+     for="tacklets.project.interfaces.IAction"
+     name="index"
+     template="action.pt"
+     permission="tacklets.project.Action"
+     />
+
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="actions"
+     class=".actions.ActionsManager"
+     template="actions.pt"
+     permission="tacklets.project.Action"
+     />
+
+  <!--
+     Transition forms
+    -->
+
+  <!-- main route -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_assign"
+     class=".forms.Assign"
+     permission="tacklets.project.Responsibility"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_resolve"
+     class=".forms.Resolve"
+     permission="tacklets.project.Action"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_verify"
+     class=".forms.Verify"
+     permission="tacklets.project.CloseIssue"
+     />
+
+  <!-- reassign -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_reassign_from_resolved"
+     class=".forms.ReassignFromResolved"
+     permission="tacklets.project.Action"
+     />
+
+  <!-- reject -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_reject_from_waiting"
+     class=".forms.RejectFromWaiting"
+     permission="tacklets.project.CloseIssue"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_reject_from_assigned"
+     class=".forms.RejectFromAssigned"
+     permission="tacklets.project.CloseIssue"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_reject_from_deferred"
+     class=".forms.RejectFromDeferred"
+     permission="tacklets.project.CloseIssue"
+     />
+
+  <!-- split -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_split_from_waiting"
+     class=".forms.SplitFromWaiting"
+     permission="tacklets.project.Action"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_split_from_assigned"
+     class=".forms.SplitFromAssigned"
+     permission="tacklets.project.Action"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_split_from_resolved"
+     class=".forms.SplitFromResolved"
+     permission="tacklets.project.Action"
+     />
+
+  <!-- defer -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_defer"
+     class=".forms.Defer"
+     permission="tacklets.project.Action"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_proceed_from_defer"
+     class=".forms.ProceedFromDefer"
+     permission="tacklets.project.Action"
+     />
+
+  <!-- feedback -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_request"
+     class=".forms.Request"
+     permission="tacklets.project.Action"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_proceed_from_feedback"
+     class=".forms.ProceedFromFeedback"
+     permission="tacklets.project.Action"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_abolish"
+     class=".forms.Abolish"
+     permission="tacklets.project.CreateIssue"
+     />
+
+  <!-- responsibility -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_responsibility_assigned"
+     class=".forms.ResponsibilityAssigned"
+     permission="tacklets.project.Responsibility"
+     />
+
+  <!-- restore -->
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_restore_from_verified"
+     class=".forms.RestoreFromVerified"
+     permission="tacklets.project.Restore"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_restore_from_rejected"
+     class=".forms.RestoreFromRejected"
+     permission="tacklets.project.Restore"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_restore_from_abolished"
+     class=".forms.RestoreFromAbolished"
+     permission="tacklets.project.Restore"
+     />
+  <page
+     for="tacklets.project.interfaces.IIssue"
+     name="action_restore_from_split"
+     class=".forms.RestoreFromSplit"
+     permission="tacklets.project.Restore"
+     />
+
+  <!--
+      simple actions
+      -->
+
+  <!-- edit -->
+  <page
+     for="tacklets.project.issue.IIssue"
+     name="action_edit"
+     class=".forms.Edit" 
+     permission="tacklets.project.Action"
+     />
+
+  <!-- topics -->
+  <page
+     for="tacklets.project.issue.IIssue"
+     name="action_topics"
+     class=".topics.ManageDocumentTopics"
+     permission="tacklets.project.Action"
+     />
+
+</configure>

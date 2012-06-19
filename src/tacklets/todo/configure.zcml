@@ -1,0 +1,98 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="tacklets">
+
+  <permission
+     id="tacklets.todo.View"
+     title="View TODO"
+     />
+
+  <permission
+     id="tacklets.todo.Write"
+     title="Write TODO"
+     />
+
+  <class class=".todo.TODO">
+    <allow
+       interface=".interfaces.ITODO"
+       />
+    <require
+       interface="zope.container.interfaces.IReadContainer"
+       permission="tacklets.todo.View"
+       />
+    <require
+       interface="zope.container.interfaces.IWriteContainer"
+       permission="tacklets.todo.Write"
+       />
+  </class>
+
+  <class class=".todo.Item">
+    <require
+       interface=".interfaces.IItem"
+       permission="tacklets.todo.View"
+       />
+    <require
+       set_schema=".interfaces.IItem"
+       permission="tacklets.todo.Write"
+       />
+  </class>
+
+  <adapter
+     factory=".todo.annotation_factory"
+     trusted="true"
+     />
+
+  <adapter
+     for=".interfaces.ITODO"
+     provides="zope.container.interfaces.INameChooser"
+     factory="tacklets.util.namechooser.DigitNameChooser"
+     />
+
+  <browser:page
+     for=".interfaces.ITODOAnnotatable"
+     name="todo_view"
+     class=".view.View"
+     permission="tacklets.todo.View"
+     />
+
+  <browser:page
+     for=".interfaces.ITODOAnnotatable"
+     name="todo_add"
+     class=".view.View"
+     attribute="add"
+     permission="tacklets.todo.Write"
+     />
+
+  <browser:page
+     for=".interfaces.ITODOAnnotatable"
+     name="todo_listing"
+     class=".view.View"
+     attribute="listing"
+     permission="tacklets.todo.View"
+     />
+
+  <browser:page
+     for=".interfaces.ITODOAnnotatable"
+     name="todo_change"
+     class=".view.View"
+     attribute="change"
+     permission="tacklets.todo.Write"
+     />
+
+  <browser:page
+     for=".interfaces.ITODOAnnotatable"
+     name="todo_remove"
+     class=".view.View"
+     attribute="remove"
+     permission="tacklets.todo.Write"
+     />
+
+  <resourceLibrary name="tacklets.todo">
+    <directory
+       source="resources"
+       include="todo.js todo.css"
+       />
+  </resourceLibrary>
+
+</configure>

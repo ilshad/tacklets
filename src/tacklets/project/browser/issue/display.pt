@@ -1,0 +1,9 @@
+<h1 tal:content="context/title" />
+
+<div style="float:right" tal:content="structure context/@@todo_view" />
+<div tal:content="structure view/description" />
+
+<div tal:content="structure context/@@properties" />
+<div id="formload" class="highlighted"></div>
+<div tal:content="structure context/@@actions" />
+<a name="watch"></a>

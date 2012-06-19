@@ -1,0 +1,5 @@
+<input
+   type="button"
+   tal:attributes="id string:action_${context/name};
+		   name string:action_${context/name};
+		   value context/title" />

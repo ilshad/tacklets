@@ -1,0 +1,48 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tacklets">
+
+  <utility
+     name="Themes"
+     component=".vocabulary.ThemingVocabulary"
+     />
+
+  <interface
+     interface=".interfaces.ITheme"
+     />
+
+  <adapter
+     factory=".theming.Theming"
+     />
+
+  <interface
+     interface=".interfaces.IDefaultThemePersistentConfig"
+     type="tackle.IPersistentConfigType"
+     name="Default Theme"
+     />
+
+  <subscriber
+     for="zope.component.interfaces.ISite
+	  zope.traversing.interfaces.IBeforeTraverseEvent"
+     handler=".handler.applyTheme"
+     />
+
+  <z3c:pagelet
+     for="zope.component.interfaces.ISite"
+     name="goodies.theming"
+     class=".edit.ThemingForm"
+     permission="tackle.Overview"
+     />
+
+  <browser:viewlet
+     title="Theme"
+     name="goodies.theming"
+     class="tackle.skin.personalbar.item.SimpleMenuItem"
+     manager="tackle.skin.personalbar.interfaces.IPersonalbar"
+     permission="tackle.Overview"
+     weight="25"
+     />
+
+</configure>

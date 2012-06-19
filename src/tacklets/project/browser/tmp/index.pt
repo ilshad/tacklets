@@ -1,0 +1,6 @@
+<script type="text/javascript"
+	tal:attributes="src string:${context/@@absolute_url}/jsvars.js"></script>
+
+<tal:block replace="resource_library:tacklets.project"/>
+
+<input type="text" name="typebox" id="typebox" tabindex="1" />

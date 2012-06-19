@@ -1,0 +1,21 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tacklets">
+
+  <class class=".responsibility.Responsibility">
+    <require
+       interface=".interfaces.IResponsibility"
+       permission="tacklets.project.Watch"
+       />
+    <require
+       set_schema=".interfaces.IResponsibility"
+       permission="tacklets.project.Responsibility"
+       />
+  </class>
+
+  <adapter
+     factory=".responsibility.annotation_factory"
+     trusted="true"
+     />
+  
+</configure>
